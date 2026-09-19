@@ -20,13 +20,13 @@
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
 
-  /* Scaled-down Symmetrical Dimension System */
-  --radius-card: 18px;
-  --radius-element: 12px;
-  --pad-card-desktop: 20px;
-  --pad-card-mobile: 10px 12px;
-  --pad-element: 6px 11px;
-  --gap-stack: 8px;
+  /* Balanced Symmetrical Dimension System */
+  --radius-card: 20px;
+  --radius-element: 13px;
+  --pad-card-desktop: 22px;
+  --pad-card-mobile: 13px 14px;
+  --pad-element: 7px 12px;
+  --gap-stack: 9px;
   --gap-items: 5px;
 }
 
@@ -65,7 +65,7 @@ body {
 }
 
 /* Eliminate unnecessary scroll when viewport height accommodates the card */
-@media (min-height: 420px) {
+@media (min-height: 460px) {
   html, body {
     overflow: hidden;
   }
@@ -97,8 +97,8 @@ body {
 
 /* Orb 1: Top-Left Soft Silver-White Light */
 .orb-1 {
-  width: 400px;
-  height: 400px;
+  width: 420px;
+  height: 420px;
   top: -80px;
   left: -60px;
   background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 70%);
@@ -107,8 +107,8 @@ body {
 
 /* Orb 2: Bottom-Right Cool Slate-Silver Light */
 .orb-2 {
-  width: 440px;
-  height: 440px;
+  width: 460px;
+  height: 460px;
   bottom: -90px;
   right: -70px;
   background: radial-gradient(circle, rgba(225, 225, 235, 0.15) 0%, rgba(225, 225, 235, 0) 70%);
@@ -117,8 +117,8 @@ body {
 
 /* Orb 3: Center-Bottom Subtle Steel Glow */
 .orb-3 {
-  width: 320px;
-  height: 320px;
+  width: 340px;
+  height: 340px;
   bottom: 20%;
   left: 15%;
   background: radial-gradient(circle, rgba(205, 205, 215, 0.13) 0%, rgba(205, 205, 215, 0) 70%);
@@ -162,7 +162,7 @@ body {
 /* Container */
 .container {
   width: 100%;
-  max-width: 660px;
+  max-width: 700px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -218,7 +218,7 @@ body {
   }
 }
 
-/* Symmetrical Card Layout (Compact & Single-View Fit) */
+/* Symmetrical Card Layout */
 .card {
   position: relative;
   z-index: 1;
@@ -315,11 +315,6 @@ body {
   color: var(--text-white);
 }
 
-.btn-primary:active {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.36);
-}
-
 .detail-item:active {
   background: rgba(255, 255, 255, 0.05);
 }
@@ -329,7 +324,7 @@ body {
    ========================================================================== */
 
 .card-left {
-  flex: 0 0 240px;
+  flex: 0 0 260px;
   background: rgba(10, 10, 12, 0.5);
   display: flex;
   align-items: center;
@@ -471,6 +466,7 @@ body {
   width: 100%;
 }
 
+/* All action buttons share the same sleek, consistent monochrome style */
 .btn-row {
   display: flex;
   align-items: center;
@@ -488,6 +484,12 @@ body {
   border: 1px solid var(--btn-border);
   background: var(--btn-bg);
   color: var(--text-white);
+}
+
+.btn-primary {
+  background: var(--btn-bg);
+  border-color: var(--btn-border);
+  box-shadow: none;
 }
 
 .btn-left {
@@ -508,57 +510,39 @@ body {
   color: var(--text-muted);
 }
 
-.btn-primary {
-  background: rgba(255, 255, 255, 0.09);
-  border-color: rgba(255, 255, 255, 0.18);
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.04);
-  animation: btn-primary-glow 5s ease-in-out infinite alternate;
-}
-
-@keyframes btn-primary-glow {
-  0% {
-    box-shadow: 0 0 6px rgba(255, 255, 255, 0.02);
-    border-color: rgba(255, 255, 255, 0.16);
-  }
-  100% {
-    box-shadow: 0 0 14px rgba(255, 255, 255, 0.08);
-    border-color: rgba(255, 255, 255, 0.26);
-  }
-}
-
 /* ==========================================================================
-   MOBILE & COMPACT VIEW (FITS WITHOUT UNNECESSARY SCROLLING)
+   MOBILE & COMPACT VIEW (SLIGHTLY BIGGER CARD, UNIFIED BUTTONS, ZERO SCROLL)
    ========================================================================== */
 
 @media (max-width: 680px) {
   :root {
-    --pad-card-mobile: 10px 12px;
-    --gap-stack: 7px;
-    --gap-items: 4px;
-    --pad-element: 5px 10px;
-    --radius-card: 16px;
-    --radius-element: 10px;
+    --pad-card-mobile: 13px 14px;
+    --gap-stack: 9px;
+    --gap-items: 5px;
+    --pad-element: 6px 11px;
+    --radius-card: 18px;
+    --radius-element: 11px;
   }
 
   body {
-    padding: 8px;
-    padding-top: max(8px, env(safe-area-inset-top, 8px));
-    padding-bottom: max(8px, env(safe-area-inset-bottom, 8px));
-    padding-left: max(8px, env(safe-area-inset-left, 8px));
-    padding-right: max(8px, env(safe-area-inset-right, 8px));
+    padding: 10px;
+    padding-top: max(10px, env(safe-area-inset-top, 10px));
+    padding-bottom: max(10px, env(safe-area-inset-bottom, 10px));
+    padding-left: max(10px, env(safe-area-inset-left, 10px));
+    padding-right: max(10px, env(safe-area-inset-right, 10px));
     align-items: center;
   }
 
   .container {
-    max-width: 310px;
+    max-width: 335px;
     margin: auto;
   }
 
   .card-glow {
-    inset: -5px;
-    border-radius: calc(var(--radius-card) + 5px);
-    filter: blur(16px);
-    -webkit-filter: blur(16px);
+    inset: -6px;
+    border-radius: calc(var(--radius-card) + 6px);
+    filter: blur(18px);
+    -webkit-filter: blur(18px);
     opacity: 0.8;
   }
 
@@ -569,7 +553,7 @@ body {
     border-radius: var(--radius-card);
   }
 
-  /* Photo Section: Neat Profile Badge */
+  /* Photo Section: Clean, Scaled-Down Symmetrical Profile (140px) */
   .card-left {
     flex: none;
     width: 100%;
@@ -582,11 +566,11 @@ body {
 
   .photo-container {
     width: 100%;
-    max-width: 120px;
+    max-width: 140px;
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-element);
     border: 1.5px solid rgba(255, 255, 255, 0.16);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.55), 0 0 14px rgba(255, 255, 255, 0.06);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.55), 0 0 16px rgba(255, 255, 255, 0.06);
   }
 
   /* Details Section */
@@ -598,23 +582,23 @@ body {
 
   .header-section {
     align-items: center;
-    gap: 2.5px;
+    gap: 3px;
   }
 
   .badge {
     align-self: center;
-    font-size: 0.54rem;
-    padding: 1.5px 7px;
+    font-size: 0.56rem;
+    padding: 2px 8px;
   }
 
   .name {
-    font-size: 1.05rem;
-    line-height: 1.2;
+    font-size: 1.12rem;
+    line-height: 1.22;
     text-align: center;
   }
 
   .alias-name {
-    font-size: 0.76rem;
+    font-size: 0.8rem;
     text-align: center;
   }
 
@@ -630,15 +614,15 @@ body {
   }
 
   .label {
-    font-size: 0.56rem;
+    font-size: 0.58rem;
   }
 
   .value {
-    font-size: 0.76rem;
+    font-size: 0.8rem;
   }
 
   .email-text {
-    font-size: 0.72rem;
+    font-size: 0.74rem;
   }
 
   .actions {
@@ -647,14 +631,14 @@ body {
 
   .btn-row {
     padding: var(--pad-element);
-    min-height: 33px;
-    font-size: 0.76rem;
+    min-height: 36px;
+    font-size: 0.78rem;
     border-radius: var(--radius-element);
   }
 
   .btn-row svg {
-    width: 13px;
-    height: 13px;
+    width: 14px;
+    height: 14px;
   }
 
   /* Mobile Orbs: Balanced Positioning Without Edge Bleed */
@@ -702,30 +686,30 @@ body {
 /* Extra Small Devices (< 320px) */
 @media (max-width: 320px) {
   :root {
-    --pad-card-mobile: 8px 10px;
-    --gap-stack: 6px;
+    --pad-card-mobile: 10px 10px;
+    --gap-stack: 7px;
     --gap-items: 4px;
-    --pad-element: 5px 8px;
+    --pad-element: 5px 9px;
   }
 
   .photo-container {
-    max-width: 105px;
+    max-width: 120px;
   }
 
   .name {
-    font-size: 0.98rem;
+    font-size: 1.02rem;
   }
 
   .alias-name {
-    font-size: 0.72rem;
+    font-size: 0.74rem;
   }
 
   .email-text {
-    font-size: 0.68rem;
+    font-size: 0.7rem;
   }
 
   .btn-row {
-    min-height: 30px;
-    font-size: 0.72rem;
+    min-height: 32px;
+    font-size: 0.74rem;
   }
 }
