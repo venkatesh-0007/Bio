@@ -6,7 +6,7 @@
   --bg-color: #09090b;
   --card-bg: rgba(18, 18, 22, 0.88);
   --card-border: rgba(255, 255, 255, 0.1);
-  --card-border-hover: rgba(255, 255, 255, 0.24);
+  --card-border-hover: rgba(255, 255, 255, 0.26);
   
   --text-white: #ffffff;
   --text-gray: #a1a1aa;
@@ -20,14 +20,14 @@
   --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-heading: 'Space Grotesk', sans-serif;
 
-  /* Symmetrical Dimension System */
-  --radius-card: 24px;
-  --radius-element: 16px;
-  --pad-card-desktop: 32px;
-  --pad-card-mobile: 20px;
-  --pad-element: 12px 16px;
-  --gap-stack: 18px;
-  --gap-items: 10px;
+  /* Scaled-down Symmetrical Dimension System */
+  --radius-card: 20px;
+  --radius-element: 13px;
+  --pad-card-desktop: 24px;
+  --pad-card-mobile: 15px;
+  --pad-element: 9px 13px;
+  --gap-stack: 13px;
+  --gap-items: 7px;
 }
 
 * {
@@ -53,11 +53,11 @@ body {
   display: flex;
   align-items: flex-start;
   justify-content: center;
-  padding: 24px 16px;
-  padding-top: max(24px, env(safe-area-inset-top, 24px));
-  padding-bottom: max(32px, env(safe-area-inset-bottom, 32px));
-  padding-left: max(16px, env(safe-area-inset-left, 16px));
-  padding-right: max(16px, env(safe-area-inset-right, 16px));
+  padding: 20px 14px;
+  padding-top: max(20px, env(safe-area-inset-top, 20px));
+  padding-bottom: max(24px, env(safe-area-inset-bottom, 24px));
+  padding-left: max(14px, env(safe-area-inset-left, 14px));
+  padding-right: max(14px, env(safe-area-inset-right, 14px));
   position: relative;
   overflow-x: hidden;
   overflow-y: auto;
@@ -82,88 +82,141 @@ body {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(90px);
-  -webkit-filter: blur(90px);
-  will-change: transform;
+  filter: blur(85px);
+  -webkit-filter: blur(85px);
+  will-change: transform, opacity;
 }
 
 /* Orb 1: Top-Left Soft Silver-White Light */
 .orb-1 {
-  width: 460px;
-  height: 460px;
-  top: -100px;
-  left: -80px;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0) 70%);
+  width: 440px;
+  height: 440px;
+  top: -90px;
+  left: -70px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0) 70%);
   animation: float-orb-1 18s ease-in-out infinite alternate;
 }
 
 /* Orb 2: Bottom-Right Cool Slate-Silver Light */
 .orb-2 {
-  width: 520px;
-  height: 520px;
-  bottom: -120px;
-  right: -100px;
-  background: radial-gradient(circle, rgba(225, 225, 235, 0.13) 0%, rgba(225, 225, 235, 0) 70%);
+  width: 480px;
+  height: 480px;
+  bottom: -100px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(225, 225, 235, 0.15) 0%, rgba(225, 225, 235, 0) 70%);
   animation: float-orb-2 22s ease-in-out infinite alternate;
 }
 
 /* Orb 3: Center-Bottom Subtle Steel Glow */
 .orb-3 {
-  width: 380px;
-  height: 380px;
+  width: 360px;
+  height: 360px;
   bottom: 20%;
   left: 15%;
-  background: radial-gradient(circle, rgba(205, 205, 215, 0.11) 0%, rgba(205, 205, 215, 0) 70%);
+  background: radial-gradient(circle, rgba(205, 205, 215, 0.13) 0%, rgba(205, 205, 215, 0) 70%);
   animation: float-orb-3 16s ease-in-out infinite alternate;
 }
 
 /* Orb 4: Top-Right Soft Highlight */
 .orb-4 {
-  width: 350px;
-  height: 350px;
+  width: 320px;
+  height: 320px;
   top: 10%;
   right: 15%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0) 70%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0) 70%);
   animation: float-orb-4 20s ease-in-out infinite alternate;
 }
 
 @keyframes float-orb-1 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(80px, 60px) scale(1.1); }
-  100% { transform: translate(-30px, 90px) scale(0.95); }
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.8; }
+  50% { transform: translate3d(60px, 45px, 0) scale(1.14); opacity: 1; }
+  100% { transform: translate3d(-25px, 70px, 0) scale(0.94); opacity: 0.75; }
 }
 
 @keyframes float-orb-2 {
-  0% { transform: translate(0, 0) scale(1); }
-  50% { transform: translate(-70px, -60px) scale(1.08); }
-  100% { transform: translate(40px, -40px) scale(0.92); }
+  0% { transform: translate3d(0, 0, 0) scale(1); opacity: 0.75; }
+  50% { transform: translate3d(-55px, -45px, 0) scale(1.12); opacity: 1; }
+  100% { transform: translate3d(30px, -30px, 0) scale(0.9); opacity: 0.7; }
 }
 
 @keyframes float-orb-3 {
-  0% { transform: translate(0, 0) scale(0.9); }
-  50% { transform: translate(-50px, -40px) scale(1.15); }
-  100% { transform: translate(60px, 30px) scale(1); }
+  0% { transform: translate3d(0, 0, 0) scale(0.9); opacity: 0.65; }
+  50% { transform: translate3d(-40px, -30px, 0) scale(1.18); opacity: 0.95; }
+  100% { transform: translate3d(45px, 20px, 0) scale(1); opacity: 0.7; }
 }
 
 @keyframes float-orb-4 {
-  0% { transform: translate(0, 0) scale(1.05); }
-  50% { transform: translate(60px, 50px) scale(0.9); }
-  100% { transform: translate(-40px, -30px) scale(1.12); }
+  0% { transform: translate3d(0, 0, 0) scale(1.05); opacity: 0.7; }
+  50% { transform: translate3d(45px, 35px, 0) scale(0.9); opacity: 1; }
+  100% { transform: translate3d(-30px, -20px, 0) scale(1.1); opacity: 0.75; }
 }
 
 /* Container */
 .container {
   width: 100%;
-  max-width: 860px;
+  max-width: 720px;
   position: relative;
   z-index: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
   margin: auto;
 }
 
-/* Symmetrical Card Layout */
+/* ==========================================================================
+   CARD WRAPPER & GLOWING BLURRED AURA ANIMATION
+   ========================================================================== */
+
+.card-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Glowing blurred multi-layered atmospheric aura */
+.card-glow {
+  position: absolute;
+  inset: -12px;
+  border-radius: calc(var(--radius-card) + 12px);
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    rgba(255, 255, 255, 0.18) 0deg,
+    rgba(180, 195, 220, 0.12) 65deg,
+    rgba(255, 255, 255, 0.03) 130deg,
+    rgba(220, 225, 240, 0.16) 200deg,
+    rgba(160, 175, 200, 0.08) 270deg,
+    rgba(255, 255, 255, 0.18) 360deg
+  );
+  filter: blur(28px);
+  -webkit-filter: blur(28px);
+  opacity: 0.7;
+  z-index: 0;
+  animation: rotate-card-glow 14s linear infinite;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
+@keyframes rotate-card-glow {
+  0% {
+    transform: rotate(0deg) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: rotate(180deg) scale(1.03);
+    opacity: 0.85;
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+    opacity: 0.6;
+  }
+}
+
+/* Symmetrical Card Layout (More Compact) */
 .card {
+  position: relative;
+  z-index: 1;
   width: 100%;
   background: var(--card-bg);
   border: 1px solid var(--card-border);
@@ -173,15 +226,52 @@ body {
   display: flex;
   align-items: stretch;
   overflow: hidden;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75), 0 0 40px rgba(255, 255, 255, 0.02);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.75), 0 0 30px rgba(255, 255, 255, 0.03);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Glowing glass border shimmer */
+.card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(255, 255, 255, 0.03) 40%,
+    rgba(255, 255, 255, 0.18) 70%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.85;
+  animation: border-sheen 8s ease-in-out infinite alternate;
+}
+
+@keyframes border-sheen {
+  0% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.35));
+  }
+  100% {
+    opacity: 0.65;
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.15));
+  }
 }
 
 /* Desktop Hover States */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
     border-color: var(--card-border-hover);
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.85), 0 0 50px rgba(255, 255, 255, 0.04);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(255, 255, 255, 0.06);
   }
 
   .card:hover .profile-photo {
@@ -189,8 +279,8 @@ body {
   }
 
   .detail-item:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.045);
+    border-color: rgba(255, 255, 255, 0.14);
   }
 
   .link-value:hover {
@@ -203,7 +293,7 @@ body {
     color: var(--btn-hover-text);
     border-color: var(--btn-hover-bg);
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.14);
   }
 
   .btn-row:hover .btn-arrow {
@@ -230,11 +320,11 @@ body {
 }
 
 /* ==========================================================================
-   DESKTOP VIEW (LEFT & RIGHT BALANCED)
+   DESKTOP VIEW (COMPACT BALANCED PROPORTIONS)
    ========================================================================== */
 
 .card-left {
-  flex: 0 0 360px;
+  flex: 0 0 280px;
   background: rgba(10, 10, 12, 0.5);
   display: flex;
   align-items: center;
@@ -250,8 +340,20 @@ body {
   overflow: hidden;
   position: relative;
   background: #141418;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55), 0 0 18px rgba(255, 255, 255, 0.05);
+  animation: photo-glow-pulse 8s ease-in-out infinite alternate;
+}
+
+@keyframes photo-glow-pulse {
+  0% {
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55), 0 0 14px rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+  100% {
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65), 0 0 22px rgba(255, 255, 255, 0.09);
+    border-color: rgba(255, 255, 255, 0.22);
+  }
 }
 
 .profile-photo {
@@ -276,26 +378,26 @@ body {
 .header-section {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 5px;
 }
 
 .badge {
   align-self: flex-start;
   font-family: var(--font-heading);
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.15em;
   color: var(--text-gray);
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 3px 10px;
+  padding: 2.5px 9px;
   border-radius: 999px;
   text-transform: uppercase;
 }
 
 .name {
   font-family: var(--font-heading);
-  font-size: clamp(1.3rem, 2.5vw, 1.65rem);
+  font-size: clamp(1.2rem, 2vw, 1.48rem);
   font-weight: 700;
   line-height: 1.25;
   color: var(--text-white);
@@ -303,7 +405,7 @@ body {
 }
 
 .alias-name {
-  font-size: 0.92rem;
+  font-size: 0.86rem;
   color: var(--text-gray);
 }
 
@@ -322,7 +424,7 @@ body {
 .detail-item {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 2.5px;
   padding: var(--pad-element);
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(255, 255, 255, 0.06);
@@ -331,7 +433,7 @@ body {
 }
 
 .label {
-  font-size: 0.68rem;
+  font-size: 0.64rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--text-muted);
@@ -339,7 +441,7 @@ body {
 }
 
 .value {
-  font-size: 0.92rem;
+  font-size: 0.88rem;
   color: var(--text-white);
   font-weight: 500;
 }
@@ -352,8 +454,8 @@ body {
 .email-text {
   overflow-wrap: anywhere;
   word-break: break-word;
-  font-size: 0.85rem;
-  line-height: 1.4;
+  font-size: 0.82rem;
+  line-height: 1.35;
 }
 
 /* Actions Section */
@@ -369,11 +471,11 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  min-height: 48px;
+  min-height: 44px;
   padding: var(--pad-element);
   border-radius: var(--radius-element);
   font-family: var(--font-heading);
-  font-size: 0.86rem;
+  font-size: 0.83rem;
   font-weight: 600;
   text-decoration: none;
   cursor: pointer;
@@ -386,17 +488,17 @@ body {
 .btn-left {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .btn-row svg {
-  width: 17px;
-  height: 17px;
+  width: 16px;
+  height: 16px;
   flex-shrink: 0;
 }
 
 .btn-arrow {
-  font-size: 1rem;
+  font-size: 0.95rem;
   transition: transform 0.2s ease;
   color: var(--text-muted);
 }
@@ -404,32 +506,55 @@ body {
 .btn-primary {
   background: rgba(255, 255, 255, 0.09);
   border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 0 14px rgba(255, 255, 255, 0.04);
+  animation: btn-primary-glow 5s ease-in-out infinite alternate;
+}
+
+@keyframes btn-primary-glow {
+  0% {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.16);
+  }
+  100% {
+    box-shadow: 0 0 16px rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.26);
+  }
 }
 
 /* ==========================================================================
-   MOBILE VIEW (FULL WIDTH SYMMETRICAL PHOTO & STACK)
+   MOBILE & COMPACT VIEW (SLIMMER, CLEANER, AND BEAUTIFULLY CENTERED)
    ========================================================================== */
 
 @media (max-width: 680px) {
   :root {
-    --pad-card-mobile: 18px;
-    --gap-stack: 15px;
-    --gap-items: 9px;
-    --pad-element: 11px 14px;
+    --pad-card-mobile: 13px;
+    --gap-stack: 10px;
+    --gap-items: 6px;
+    --pad-element: 7px 11px;
+    --radius-card: 16px;
+    --radius-element: 11px;
   }
 
   body {
-    padding: 16px 14px;
-    padding-top: max(16px, env(safe-area-inset-top, 16px));
-    padding-bottom: max(28px, env(safe-area-inset-bottom, 28px));
-    padding-left: max(14px, env(safe-area-inset-left, 14px));
-    padding-right: max(14px, env(safe-area-inset-right, 14px));
+    padding: 12px 10px;
+    padding-top: max(12px, env(safe-area-inset-top, 12px));
+    padding-bottom: max(18px, env(safe-area-inset-bottom, 18px));
+    padding-left: max(10px, env(safe-area-inset-left, 10px));
+    padding-right: max(10px, env(safe-area-inset-right, 10px));
     align-items: flex-start;
   }
 
   .container {
-    max-width: 420px;
+    max-width: 340px;
     margin: auto 0;
+  }
+
+  .card-glow {
+    inset: -8px;
+    border-radius: calc(var(--radius-card) + 8px);
+    filter: blur(20px);
+    -webkit-filter: blur(20px);
+    opacity: 0.8;
   }
 
   .card {
@@ -439,7 +564,7 @@ body {
     border-radius: var(--radius-card);
   }
 
-  /* Photo Section: Expanded to Match Detail & Button Width Symmetrically */
+  /* Photo Section: Clean, Scaled-Down Symmetrical Profile */
   .card-left {
     flex: none;
     width: 100%;
@@ -452,11 +577,11 @@ body {
 
   .photo-container {
     width: 100%;
-    max-width: 100%;
+    max-width: 175px;
     aspect-ratio: 1 / 1;
     border-radius: var(--radius-element);
     border: 1.5px solid rgba(255, 255, 255, 0.16);
-    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.55);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.55), 0 0 16px rgba(255, 255, 255, 0.06);
   }
 
   /* Details Section */
@@ -468,21 +593,23 @@ body {
 
   .header-section {
     align-items: center;
-    gap: 6px;
+    gap: 4px;
   }
 
   .badge {
     align-self: center;
+    font-size: 0.58rem;
+    padding: 2px 8px;
   }
 
   .name {
-    font-size: 1.32rem;
-    line-height: 1.28;
+    font-size: 1.18rem;
+    line-height: 1.25;
     text-align: center;
   }
 
   .alias-name {
-    font-size: 0.88rem;
+    font-size: 0.82rem;
     text-align: center;
   }
 
@@ -497,8 +624,16 @@ body {
     border-radius: var(--radius-element);
   }
 
-  .email-text {
+  .label {
+    font-size: 0.6rem;
+  }
+
+  .value {
     font-size: 0.82rem;
+  }
+
+  .email-text {
+    font-size: 0.76rem;
   }
 
   .actions {
@@ -507,7 +642,8 @@ body {
 
   .btn-row {
     padding: var(--pad-element);
-    min-height: 48px;
+    min-height: 38px;
+    font-size: 0.8rem;
     border-radius: var(--radius-element);
   }
 
@@ -553,35 +689,39 @@ body {
   }
 }
 
-/* Extra Small Devices (< 360px) */
-@media (max-width: 360px) {
+/* Extra Small Devices (< 340px) */
+@media (max-width: 340px) {
   :root {
-    --pad-card-mobile: 14px;
-    --gap-stack: 12px;
-    --gap-items: 8px;
-    --pad-element: 9px 12px;
+    --pad-card-mobile: 12px;
+    --gap-stack: 10px;
+    --gap-items: 6px;
+    --pad-element: 8px 10px;
   }
 
   body {
-    padding: 12px 10px;
-    padding-top: max(12px, env(safe-area-inset-top, 12px));
-    padding-bottom: max(20px, env(safe-area-inset-bottom, 20px));
+    padding: 10px 8px;
+    padding-top: max(10px, env(safe-area-inset-top, 10px));
+    padding-bottom: max(18px, env(safe-area-inset-bottom, 18px));
+  }
+
+  .photo-container {
+    max-width: 170px;
   }
 
   .name {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
   }
 
   .alias-name {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   .email-text {
-    font-size: 0.76rem;
+    font-size: 0.72rem;
   }
 
   .btn-row {
-    min-height: 44px;
-    font-size: 0.82rem;
+    min-height: 40px;
+    font-size: 0.78rem;
   }
 }
